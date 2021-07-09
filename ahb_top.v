@@ -1,21 +1,99 @@
 module ahb_top () (
 
   ahb_master master1 (
-    .hwdata		(hwdata),
-    .haddr		(haddr),
-    .hrdata		(hrdata)
+    .hwdata1		(hwdata),
+    .haddr1		(haddr),
+    .hrdata1		(hrdata)
   );
   
   ahb_master master2 (
-    .hwdata		(hwdata),
-    .haddr		(haddr),
-    .hrdata		(hrdata)
+    .hwdata2		(hwdata),
+    .haddr2		(haddr),
+    .hrdata2		(hrdata)
   );
   
-  ahb_master master## (
-    .hwdata		(hwdata),
-    .haddr		(haddr),
-    .hrdata		(hrdata)
+  ahb_master master3 (
+    .hwdata3		(hwdata),
+    .haddr3		(haddr),
+    .hrdata3		(hrdata)
+  );
+  
+  ahb_master master4 (
+    .hwdata4		(hwdata),
+    .haddr14		(haddr),
+    .hrdata14		(hrdata)
+  );
+  
+  ahb_master master5 (
+    .hwdata5		(hwdata),
+    .haddr5		(haddr),
+    .hrdata5		(hrdata)
+  );
+  
+  ahb_master master6 (
+    .hwdata6		(hwdata),
+    .haddr6		(haddr),
+    .hrdata6		(hrdata)
+  );
+  
+  ahb_master master7 (
+    .hwdata7		(hwdata),
+    .haddr7		(haddr),
+    .hrdata7		(hrdata)
+  );
+  
+  ahb_master master8 (
+    .hwdata8		(hwdata),
+    .haddr8 	(haddr),
+    .hrdata8		(hrdata)
+  );
+  
+  ahb_master master9 (
+    .hwdata9		(hwdata),
+    .haddr9		(haddr),
+    .hrdata9		(hrdata)
+  );
+  
+  ahb_master master10 (
+    .hwdata10		(hwdata),
+    .haddr10		(haddr),
+    .hrdata10		(hrdata)
+  );
+  
+  ahb_master master11 (
+    .hwdata11		(hwdata),
+    .haddr11		(haddr),
+    .hrdata11		(hrdata)
+  );
+  
+  ahb_master master12 (
+    .hwdata12		(hwdata),
+    .haddr12		(haddr),
+    .hrdata12		(hrdata)
+  );
+
+  ahb_master master13 (
+    .hwdata13		(hwdata),
+    .haddr13		(haddr),
+    .hrdata13		(hrdata)
+  );
+  
+  ahb_master master14 (
+    .hwdata14		(hwdata),
+    .haddr14		(haddr),
+    .hrdata14		(hrdata)
+  );
+  
+  ahb_master master15 (
+    .hwdata15		(hwdata),
+    .haddr15		(haddr),
+    .hrdata15		(hrdata)
+  );
+  
+  ahb_master master16 (
+    .hwdata16		(hwdata),
+    .haddr16		(haddr),
+    .hrdata16		(hrdata)
   );
   
   ahb_decoder decoder (
