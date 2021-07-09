@@ -96,7 +96,7 @@ module ahb_top () (
     .hrdata16		(hrdata)
   );
   
-  ahb_decoder decoder (
+  address_decoder decoder (
     .haddr		(haddr),
     .mux_sel	(mux_sel),
     .hsel_1		(hsel_1),
@@ -117,7 +117,7 @@ module ahb_top () (
     .hsel_16	(hsel_16)
   );
     
-  ahb_mux mux (
+  multiplexer multiplexer (
     .sel		(sel),
     .hrdata		(hrdata),
     .hrdata_1	(hrdata_1),
