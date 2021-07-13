@@ -228,6 +228,7 @@ module ahb_top () (
     .hrdata		      (hrdata_1), //out from slave
     .hresp          (hresp_1),  //out from slave
     .hreadyout      (hreadyout_1), //out from slave
+    .hsplit     (hsplit_1),
     .haddr      (haddr),
     .htrans     (htrans),
     .hwrite     (hwrite),
@@ -244,6 +245,7 @@ module ahb_top () (
     .hrdata		      (hrdata_2), //out from slave
     .hresp          (hresp_2),  //out from slave
     .hreadyout      (hreadyout_2), //out from slave
+    .hsplit     (hsplit_2),
     .haddr      (haddr),
     .htrans     (htrans),
     .hwrite     (hwrite),
@@ -260,6 +262,7 @@ module ahb_top () (
     .hrdata		      (hrdata_3), //out from slave
     .hresp          (hresp_3),  //out from slave
     .hreadyout      (hreadyout_3), //out from slave
+    .hsplit     (hsplit_3),
     .haddr      (haddr),
     .htrans     (htrans),
     .hwrite     (hwrite),
@@ -276,6 +279,7 @@ module ahb_top () (
     .hrdata		      (hrdata_4), //out from slave
     .hresp          (hresp_4),  //out from slave
     .hreadyout      (hreadyout_4), //out from slave
+    .hsplit     (hsplit_4),
     .haddr      (haddr),
     .htrans     (htrans),
     .hwrite     (hwrite),
