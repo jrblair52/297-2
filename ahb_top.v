@@ -32,79 +32,18 @@ module ahb_top () (
     .hclk		(hclk),
     .hreset		(hreset),
     .haddr		(haddr),
-    .hsel_1		(hsel_1),
-    .hsel_2		(hsel_2),
-    .hsel_3		(hsel_3),
-    .hsel_4		(hsel_4),
-    .hsel_5		(hsel_5),
-    .hsel_6		(hsel_6),
-    .hsel_7		(hsel_7),
-    .hsel_8		(hsel_8),
-    .hsel_9		(hsel_9),
-    .hsel_10		(hsel_10)
-    .hsel_11		(hsel_11),
-    .hsel_12		(hsel_12),
-    .hsel_13		(hsel_13),
-    .hsel_14		(hsel_14),
-    .hsel_15		(hsel_15),
-    .hsel_16		(hsel_16)
+    .hsel_1		(hsel_1)
   );
     
-  multiplexer_slave multiplexer (
-    .hclk		(hclk),
-    .hreset		(hreset),
-    .haddr		(haddr),
-    .hrdata_1		(hrdata_1),
-    .hrdata_2		(hrdata_2),
-    .hrdata_3		(hrdata_3),
-    .hrdata_4		(hrdata_4),
-    .hrdata_5		(hrdata_5),
-    .hrdata_6		(hrdata_6),
-    .hrdata_7		(hrdata_7),
-    .hrdata_8		(hrdata_8),
-    .hrdata_9		(hrdata_9),
-    .hrdata_10		(hrdata_10),
-    .hrdata_11		(hrdata_11),
-    .hrdata_12		(hrdata_12),
-    .hrdata_13		(hrdata_13),
-    .hrdata_14		(hrdata_14),
-    .hrdata_15		(hrdata_15),
-    .hrdata_16		(hrdata_16),
-    .hreadyout_1	(hreadyout_1),
-    .hreadyout_2	(hreadyout_2),
-    .hreadyout_3	(hreadyout_3),
-    .hreadyout_4	(hreadyout_4),
-    .hreadyout_5	(hreadyout_5),
-    .hreadyout_6	(hreadyout_6),
-    .hreadyout_7	(hreadyout_7),
-    .hreadyout_8	(hreadyout_8),
-    .hreadyout_9	(hreadyout_9),
-    .hreadyout_10	(hreadyout_10),
-    .hreadyout_11	(hreadyout_11),
-    .hreadyout_12	(hreadyout_12),
-    .hreadyout_13	(hreadyout_13),
-    .hreadyout_14	(hreadyout_14),
-    .hreadyout_15	(hreadyout_15),
-    .hreadyout_16	(hreadyout_16),
-    .hresp_1		(hresp_1),
-    .hresp_2		(hresp_2),
-    .hresp_3		(hresp_3),
-    .hresp_4		(hresp_4),
-    .hresp_5		(hresp_5),
-    .hresp_6		(hresp_6),
-    .hresp_7		(hresp_7),
-    .hresp_8		(hresp_8),
-    .hresp_9		(hresp_9),
-    .hresp_10		(hresp_10),
-    .hresp_11		(hresp_11),
-    .hresp_12		(hresp_12),
-    .hresp_13		(hresp_13),
-    .hresp_14		(hresp_14),
-    .hresp_15		(hresp_15),
-    .hresp_16		(hresp_16),
-    .hrdata		(hrdata),
-    .hready		(hready),
-    .hresp		(hresp)
+  multiplexer_slave multiplexor (
+    .hclk		      (hclk),
+    .hreset		    (hreset),
+    .haddr  		  (haddr_1),
+    .hrdata	      (hrdata_1),
+    .hreadyout	  (hreadyout_1),
+    .hrdata		    (hrdata_1),
+    .hready		    (hready_1),
+    .hresp  		  (hresp_1)
   );
   
   multiplexor_master multiplexor (
@@ -116,9 +55,9 @@ module ahb_top () (
     .htrans_1   (htrans_1),
     .hwrite_1   (hwrite_1),
     .hsize_1    (hsize_1),
-    .hburst_1   (hburst_1),
-    .hprot_1    (hprot_1),
-    .hwdata_1   (hwdata_1)
+    .hburst_1   (hburst),
+    .hprot_1    (hprot),
+    .hwdata_1   (hwdata)
   );
     
   
@@ -133,7 +72,7 @@ module ahb_top () (
     .hbusreq_1		(hbusreq_1),
     .hbusreq_2		(hbusreq_2),
     .hbusreq_3		(hbusreq_3),
-    .addr		(haddr),
+    .addr		    (haddr),
     .hsplit_0		(hsplit_0),
     .hsplit_1		(hsplit_1),
     .hsplit_2		(hsplit_2),
@@ -162,8 +101,20 @@ module ahb_top () (
   );
   
   ahb_slave slave_1 (
-    .hsel_1		(hsel),
-    .hrdata_1		(hrdata)
+    .hclk       (hclk),
+    .hreset     (hreset),
+    .hsel 		  (hsel),
+    .hrdata_1		(hrdata),
+    .hresp_1    (hresp),
+    .hready_1   (hready),
+    .haddr      (haddr),
+    .htrans     (htrans),
+    .hwrite     (hwrite),
+    .hsize      (hsize),
+    .hburst     (hburst),
+    .hprot      (hprot),
+    .hwdata     (hwdata),
+    .hmastlock  (hmastlock)
   );
     
 endmodule
