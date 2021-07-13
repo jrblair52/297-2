@@ -50,7 +50,9 @@ module ahb_top () (
     .hsel_16		(hsel_16)
   );
     
-  multiplexer multiplexer (
+  multiplexer_slave multiplexer (
+    .hclk		(hclk),
+    .hreset		(hreset),
     .haddr		(haddr),
     .hrdata_1		(hrdata_1),
     .hrdata_2		(hrdata_2),
@@ -104,6 +106,21 @@ module ahb_top () (
     .hready		(hready),
     .hresp		(hresp)
   );
+  
+  multiplexor_master multiplexor (
+    .hclk       (hclk),
+    .hreset     (hreset),
+    .hgrant_1   (hgrant_1),
+    .hmaster_1  (hmaster
+    .haddr_1    (haddr),
+    .htrans_1   (htrans_1),
+    .hwrite_1   (hwrite_1),
+    .hsize_1    (hsize_1),
+    .hburst_1   (hburst_1),
+    .hprot_1    (hprot_1),
+    .hwdata_1   (hwdata_1)
+  );
+    
   
   ahb_arbiter arbiter (
     .hreset_n		(hreset_n),
