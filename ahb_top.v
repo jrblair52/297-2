@@ -1,3 +1,4 @@
+//need include statments up here
 module ahb_top () (
   
   wire [1:0] hresp_1,hresp_2,hresp_3,hresp_4;
@@ -53,9 +54,9 @@ module ahb_top () (
       .bus_rdata	(bus_rdata_2),
       .bus_rdone	(bus_rdone_2),
       .bus_wready	(bus_wready_2),
-    .hreset		  (hreset),
-    .hclk			  (hclk),
-    .hreset		  (hreset),
+      .hreset		  (hreset),
+      .hclk			  (hclk),
+      .hreset		  (hreset),
       .hresp		  (hresp_2),
       .hgrant		  (hgrant_2),
       .hrdata		  (hrdata_2),
@@ -107,9 +108,9 @@ module ahb_top () (
       .bus_rdata	(bus_rdata_4),
       .bus_rdone	(bus_rdone_4),
       .bus_wready	(bus_wready_4),
-    .hreset		  (hreset),
-    .hclk			  (hclk),
-    .hreset		  (hreset),
+      .hreset		  (hreset),
+      .hclk			  (hclk),
+      .hreset		  (hreset),
       .hresp		  (hresp_4),
       .hgrant		  (hgrant_4),
       .hrdata		  (hrdata_4),
@@ -125,31 +126,65 @@ module ahb_top () (
       .hwdata		  (hwdata_4)
   );
   address_decoder decoder (
-    .hclk		(hclk),
+    .hclk		  (hclk),
     .hreset		(hreset),
     .haddr		(haddr),
     .hsel_1		(hsel_1)
+    .hsel_2		(hsel_2)
+    .hsel_3		(hsel_3)
+    .hsel_4		(hsel_4)
   );
     
   
   multiplexor_master multiplexor (
     .hclk       (hclk),
     .hreset     (hreset),
-    .hgrant   (hgrant_1),
     .hmaster  (hmaster),
-    .haddr    (haddr_1),
-    .htrans   (htrans_1),
-    .hwrite   (hwrite_1),
-    .hsize    (hsize_1),
-    .hburst   (hburst_1),
-    .hprot    (hprot_1),
-    .hwdata   (hwdata_1)
+    .haddr    (haddr),
+    .htrans   (htrans),
+    .hwrite   (hwrite),
+    .hsize    (hsize),
+    .hburst   (hburst),
+    .hprot    (hprot),
+    .hwdata   (hwdata),
+    .hgrant_1   (hgrant_1),
+    .haddr_1    (haddr_1),
+    .htrans_1   (htrans_1),
+    .hwrite_1   (hwrite_1),
+    .hsize_1    (hsize_1),
+    .hburst_1   (hburst_1),
+    .hprot_1    (hprot_1),
+    .hwdata_1   (hwdata_1),
+    .hgrant_2   (hgrant_2),
+    .haddr_22   (haddr_2),
+    .htrans_2   (htrans_2),
+    .hwrite_2   (hwrite_2),
+    .hsize_2    (hsize_2),
+    .hburst_2   (hburst_2),
+    .hprot_2    (hprot_2),
+    .hwdata_2   (hwdata_2),
+    .hgrant_3   (hgrant_3),
+    .haddr_3    (haddr_3),
+    .htrans_3   (htrans_3),
+    .hwrite_3   (hwrite_3),
+    .hsize_3    (hsize_3),
+    .hburst_3   (hburst_3),
+    .hprot_3    (hprot_3),
+    .hwdata_3   (hwdata_3),
+    .hgrant_4   (hgrant_4),
+    .haddr_4    (haddr_4),
+    .htrans_4   (htrans_4),
+    .hwrite_4   (hwrite_4),
+    .hsize_4    (hsize_4),
+    .hburst_4   (hburst_4),
+    .hprot_4    (hprot_4),
+    .hwdata_4   (hwdata_4)
   );
     
   
   ahb_arbiter arbiter (
     .hreset_n		(hreset_n),
-    .hclk		(hclk),
+    .hclk		    (hclk),
     .hlock_0		(hlock_0),
     .hlock_1		(hlock_1),
     .hlock_2		(hlock_2),
@@ -183,7 +218,7 @@ module ahb_top () (
     .hgrant_2		(hgrant_2),
     .hgrant_3		(hgrant_3),
     .hmaster		(hmaster),
-    .hmastlock		(hmastlock)
+    .hmastlock	(hmastlock)
   );
   
   ahb_slave slave_1 (
@@ -205,10 +240,10 @@ module ahb_top () (
     ahb_slave slave_2 (
     .hclk       (hclk),
     .hreset     (hreset),
-      .hsel 		  (hsel_2),
-      .hrdata		      (hrdata_2), //out from slave
-      .hresp          (hresp_2),  //out from slave
-      .hreadyout      (hreadyout_2), //out from slave
+    .hsel 		  (hsel_2),
+    .hrdata		      (hrdata_2), //out from slave
+    .hresp          (hresp_2),  //out from slave
+    .hreadyout      (hreadyout_2), //out from slave
     .haddr      (haddr),
     .htrans     (htrans),
     .hwrite     (hwrite),
@@ -252,11 +287,23 @@ module ahb_top () (
   );
   
    multiplexer_slave multiplexor (
-    .hclk		      (hclk),
-    .hreset		    (hreset),
-    .hrdata	      (hrdata_1),
-    .hready	      (hreadyout_1),
-    .hresp  		  (hresp_1)
+    .hclk		        (hclk),
+    .hreset		      (hreset),
+    .hrdata	        (hrdata),
+    .hready	        (hreadyout),
+    .hresp    		  (hresp),
+    .hrdata_1	      (hrdata_1),
+    .hready_1	      (hreadyout_1),
+    .hresp_1  		  (hresp_1),
+    .hrdata_2	      (hrdata_2),
+    .hready_2	      (hreadyout_2),
+    .hresp_2  		  (hresp_2),
+    .hrdata_3	      (hrdata_3),
+    .hready_3	      (hreadyout_3),
+    .hresp_3  		  (hresp_3),
+    .hrdata_4	      (hrdata_4),
+    .hready_4	      (hreadyout_4),
+    .hresp_4  		  (hresp_4),
   );
     
 endmodule
