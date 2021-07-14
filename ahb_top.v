@@ -1,22 +1,22 @@
 //need include statments up here
-module ahb_top () (
+module ahb_top (
   
-  wire [1:0] hresp_1,hresp_2,hresp_3,hresp_4;
-  wire [31:0] hrdata_1,hrdata_2,hrdata_3,hrdata_4;
-  wire hsel_1,hsel_2,hsel_3,hsel_4;
-  wire hreadyout_1,hreadyout_2,hreadyout_3,hreadyout_4;
-  wire hwrite_1,hwrite_2,hwrite_3,hwrite_4;
-  wire hmastlock,hmastlock_1,hmastlock_2,hmastlock_3,hmastlock_4;
-  wire hburstreq_1,hburstreq_2,hburstreq_3,hburstreq_4;
-  wire [31:0] haddr, haddr_1,haddr_2,haddr_3,haddr_4;
-  wire [1:0] htrans, htrans_1,htrans_2,htrans_3,htrans_4;
-  wire [2:0] hsize, hsize_1,hsize_2,hsize_3,hsize_4;
-  wire [2:0] hburst, hburst_1,hburst_2,hburst_3,hburst_4;
-  wire [3:0] hprot, hprot_1,hprot_2,hprot_3,hprot_4;
-  wire [31:0] hwdata, hwdata_1,hwdata_2,hwdata_3,hwdata_4;
-  wire [15:0] hsplit_1,hsplit_2,hsplit_3,hsplit_4;
+  wire [1:0] hresp_1,hresp_2,hresp_3,hresp_4,
+  wire [31:0] hrdata_1,hrdata_2,hrdata_3,hrdata_4,
+  wire hsel_1,hsel_2,hsel_3,hsel_4,
+  wire hreadyout_1,hreadyout_2,hreadyout_3,hreadyout_4,
+  wire hwrite_1,hwrite_2,hwrite_3,hwrite_4,
+  wire hmastlock,hmastlock_1,hmastlock_2,hmastlock_3,hmastlock_4,
+  wire hburstreq_1,hburstreq_2,hburstreq_3,hburstreq_4,
+  wire [31:0] haddr, haddr_1,haddr_2,haddr_3,haddr_4,
+  wire [1:0] htrans, htrans_1,htrans_2,htrans_3,htrans_4,
+  wire [2:0] hsize, hsize_1,hsize_2,hsize_3,hsize_4,
+  wire [2:0] hburst, hburst_1,hburst_2,hburst_3,hburst_4,
+  wire [3:0] hprot, hprot_1,hprot_2,hprot_3,hprot_4,
+  wire [31:0] hwdata, hwdata_1,hwdata_2,hwdata_3,hwdata_4,
+  wire [15:0] hsplit_1,hsplit_2,hsplit_3,hsplit_4
   
-
+);
   ahb_master master_1 (
     .host_read	(host_read_1),
     .host_write	(host_write_1),
@@ -129,9 +129,9 @@ module ahb_top () (
     .hclk		  (hclk),
     .hreset		(hreset),
     .haddr		(haddr),
-    .hsel_1		(hsel_1)
-    .hsel_2		(hsel_2)
-    .hsel_3		(hsel_3)
+    .hsel_1		(hsel_1),
+    .hsel_2		(hsel_2),
+    .hsel_3		(hsel_3),
     .hsel_4		(hsel_4)
   );
     
@@ -307,7 +307,7 @@ module ahb_top () (
     .hresp_3  		  (hresp_3),
     .hrdata_4	      (hrdata_4),
     .hready_4	      (hreadyout_4),
-    .hresp_4  		  (hresp_4),
+    .hresp_4  		  (hresp_4)
   );
     
 endmodule
