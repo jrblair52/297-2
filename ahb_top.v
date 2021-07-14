@@ -136,7 +136,7 @@ module ahb_top () (
   );
     
   
-  multiplexor_master multiplexor (
+ master_multiplexer multiplexor_m (
     .hclk       (hclk),
     .hreset     (hreset),
     .hmaster  (hmaster),
@@ -290,7 +290,7 @@ module ahb_top () (
     .hmastlock  (hmastlock)
   );
   
-   multiplexer_slave multiplexor (
+   slave_multiplexer multiplexor_s (
     .hclk		        (hclk),
     .hreset		      (hreset),
     .hrdata	        (hrdata),
